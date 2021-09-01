@@ -51,6 +51,7 @@ brew services start dbus
 git clone https://gitlab.matrix.org/matrix-org/olm
 (cd olm; make)
 git clone https://github.com/matrix-org/pantalaimon
+brew install libolm
 (cd pantalaimon; CFLAGS=-I../olm/include LDFLAGS=-L../olm/build/ python3 setup.py install)
 
 export DBUS_SESSION_BUS_ADDRESS=unix:path=$(launchctl getenv DBUS_LAUNCHD_SESSION_BUS_SOCKET)
